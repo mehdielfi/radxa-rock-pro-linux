@@ -4,10 +4,12 @@
 
 ## Téléchargements
 
-- [Image P11 pour la NAND](https://github.com/mehdielfi/radxa-rock-pro-linux/releases/download/p11/alpine-rock-pro-nand-p11-linux618-ssh-public-rk269.img)
+- [Image P11 compressée ZIP — environ 54 Mo](https://github.com/mehdielfi/radxa-rock-pro-linux/releases/download/p11/alpine-rock-pro-nand-p11-linux618-ssh-public-rk269.img.zip)
 - [RKDevTool 2.69 pour Windows](https://github.com/mehdielfi/radxa-rock-pro-linux/releases/download/p11/RKDevTool-2.69.zip)
 - [Notice P11 à télécharger](https://github.com/mehdielfi/radxa-rock-pro-linux/releases/download/p11/README-P11.md)
 - [Page de la version P11](https://github.com/mehdielfi/radxa-rock-pro-linux/releases/tag/p11)
+
+**Extraire le ZIP de la P11 avant le flashage.** Il contient l’IMG originale de 302 154 200 octets, inchangée. Son SHA-256 après extraction est indiqué ci-dessous. L’archive ZIP mesure 54 243 721 octets ; son SHA-256 est `a913659ad93dfdbd0edc9ca6083d29e0de3b221000ae434587f78045e97afeaf`.
 
 Image serveur **Alpine Linux ARMv7** avec noyau **Linux 6.18.59-radxa1**, destinée à la **NAND interne du Radxa Rock Pro RK3188**. Cette version communautaire dérive de la P10 et fournit des identifiants initiaux publics pour permettre une première connexion SSH.
 
@@ -17,7 +19,8 @@ Projet de réemploi réalisé par [Mehdi El-Filahi](https://github.com/mehdielfi
 
 | Fichier | Utilisation |
 | --- | --- |
-| `alpine-rock-pro-nand-p11-linux618-ssh-public-rk269.img` | Firmware Rockchip complet à charger sur la NAND avec RKDevTool 2.69 |
+| `alpine-rock-pro-nand-p11-linux618-ssh-public-rk269.img.zip` | Archive à extraire pour obtenir le firmware IMG de la NAND |
+| `alpine-rock-pro-nand-p11-linux618-ssh-public-rk269.img` | Firmware extrait, à charger avec RKDevTool 2.69 |
 | `RKDevTool-2.69.zip` | Programme Windows de chargement, avec ses dépendances et les manuels d’origine |
 | `README-P11.md` | Installation, connexion et état de validation de P11 |
 
@@ -176,6 +179,8 @@ Validations effectuées sur l’artefact P11 :
 ## English quick start
 
 P11 is a community **Alpine Linux ARMv7** server image for the **Radxa Rock Pro RK3188 internal NAND**. It retains P10’s kernel and hardware configuration while replacing the personal account password with public initial credentials.
+
+First extract the P11 `.img.zip` archive to obtain the unchanged `.img` firmware. The image SHA-256 below refers to the extracted IMG.
 
 1. Extract all of `RKDevTool-2.69.zip` and launch `RKDevTool-2.69\AndroidTool.exe` on Windows with the Rockusb driver installed.
 2. Connect a USB **data** cable to the board’s OTG port and enter LOADER mode using RECOVERY, with RESET if the board is already powered.
