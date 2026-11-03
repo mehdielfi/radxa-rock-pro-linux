@@ -26,6 +26,10 @@ Noyau/DTB, chargeur NAND, géométrie, affichage HDMI 720p60 et menu des autres 
 
 Utilisateur et mot de passe publics : `radaxrock2026` / `radaxrock2026`. Root est interdit en SSH ; utiliser `sudo`. **Changer le mot de passe avec `passwd` avant toute exposition Internet.** Ethernet démarre en DHCP ; aucun Wi-Fi privé ou IP fixe personnelle n'est embarqué.
 
+Le pare-feu initial de P11 reste en place : SSH est autorisé depuis `192.168.1.0/24`, `192.168.137.0/24` et les adresses IPv6 de lien local. Sur un autre sous-réseau, adapter ses règles depuis la console locale ; un mot de passe correct ne suffit pas à franchir ce filtrage.
+
+Le gestionnaire de paquets est **APK** : `sudo apk update`. Le mécanisme de swap de 512 Mio et les plafonds de 1 Gio pour `/dev`, `/run` et `/tmp` sont conservés de P11 ; ces derniers sont des systèmes de fichiers en RAM et ne retirent pas d'espace à la NAND. Vérifier l'état réel après démarrage avec `free -m`, `cat /proc/swaps` et `df -h /`.
+
 ```sh
 sudo radxa-ethernet-qos status
 sudo radxa-ethernet-fifo status
