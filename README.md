@@ -1,6 +1,6 @@
 # Radxa Rock Pro P11
 
-**Version expérimentale : contrôles d’image et connexion SSH sous QEMU validés ; démarrage physique de la P11 encore à tester.**
+**Version expérimentale : contrôles d’image et connexion SSH sous QEMU validés ; démarrage physique de la P11 testée et fonctionnelle.**
 
 ## Téléchargements
 
